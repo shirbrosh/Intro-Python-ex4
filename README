@@ -1,0 +1,68 @@
+shir_brosh
+316124767
+Shir Brosh
+
+I discussed the exercise with: Ortal Glatt, Yair Shemer
+
+=============================
+=  README for ex4:   =
+=============================
+update_word_pattern, run_single_game, main, letters_in_pattern (an auxiliary
+function), same_wrong_letters (an auxiliary function), filter_words_list,
+choose_letter, test_for_update_word_pattern.
+
+==================
+=  Description: =
+==================
+update_word_pattern- A function that receives a word, the current pattern and a
+    letter and returns the updated pattern containing the letter in the
+    suitable location according to the word.
+run_single_game- A function that receives a list of words, randomly choosing
+    one and runs the game 'hangman' on the chosen word.(inside the function
+    there are notes in # to help understand the code).
+main- A function that generates the game 'hangman' using the function-
+    run_single_game
+letters_in_pattern- A function that receives a word and a pattern and returns True if the
+    pattern is suitable to the word (if every letter in the pattern matches the
+    location of the same letter in the word and False otherwise- this is a
+    auxiliary function for filter_words_list.
+same_wrong_letters- A function that receives a word and a list with wrong
+    letters and returns True if nun of the letters in the list is in the word
+    and False otherwise- this is a auxiliary function for filter_words_list.
+filter_words_list- A function that receives a list of words, a pattern and a
+    wrong guess list and returns a new list containing only the words that can
+    match the pattern. this function uses the functions- same_wrong_letters and
+    optional_words.
+choose_letter- A function that receives a list of words and a pattern and
+    returns the most frequent letter in the list that also does not appear in
+    the pattern.
+test_for_update_word_pattern- A function that tests the function
+    update_word_pattern from hangman.py. It runs 4 extrema inputs and if all
+    the outputs is as expected the test will print 'Function
+    'update_word_pattern' test success' and returns True, if the test failed it
+    will print 'Function 'update_word_pattern' test fail' and returns False.
+
+
+section C- q1:
+1. ("anachronistic", "a_a__________", "c") - I used this input because its a
+    complicated long word.
+2. ("panacea", "p_n_ce_", "a") - I used this input because there are 3 'a' and
+    also the output suppose to be the full word.
+3. ("python", "__th__", "w") - I used this input because the letter 'w' is not
+    in the word, so the output should be the same input pattern.
+4. ("avadakedavra", "_v___k______", "a") - I used this input because the letter
+    'a' appear 5 times in the word and also its a scary word.
+
+
+section C- q2:
+If we wanted the game to work in hebrew I'd had to change the const "CHAR_A"
+and "CHAR_Z" to the hebrew letters, also i had to change the condition in the
+function run_single_game that checks if the letter is valid- and uses the
+function islower(), instead i will have to check if the chosen letter is
+between CHAR_ALEF to CHAR_TAF
+
+
+======================
+=  Special Comments: =
+======================
+
